@@ -1,6 +1,6 @@
-FROM debian:stable-backports
-
-RUN apt-get update && apt-get install -y mariadb-server && \
+FROM debian:bullseye
+RUN apt-get update && apt-get upgrade -y && \
+	apt-get install -y mariadb-server && \
 	rm -rf /var/lib/apt/lists/* && \
 	mkdir -p /var/run/mysqld && \
 	chown -R mysql:root /var/run/mysqld /var/lib/mysql && \

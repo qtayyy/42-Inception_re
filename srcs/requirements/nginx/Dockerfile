@@ -1,5 +1,6 @@
-FROM debian:stable-backports
-RUN apt-get update && apt-get install -y nginx openssl && \
+FROM debian:bullseye
+RUN apt-get update && apt-get upgrade -y && \
+	apt-get install -y nginx openssl && \
 	mkdir /etc/nginx/ssl && \
 	openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
        -out /etc/nginx/ssl/qtay.crt \
