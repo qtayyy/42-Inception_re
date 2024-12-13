@@ -3,7 +3,7 @@ RUN apt-get update && apt-get upgrade -y && \
 	apt-get install -y mariadb-server && \
 	rm -rf /var/lib/apt/lists/* && \
 	mkdir -p /var/run/mysqld && \
-	chown -R mysql:root /var/run/mysqld /var/lib/mysql && \
+	chown -R mysql:mysql /var/run/mysqld /var/lib/mysql && \
 	chmod 775 /var/run/mysqld && \
 	sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
 
