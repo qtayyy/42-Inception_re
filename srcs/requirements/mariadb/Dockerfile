@@ -10,7 +10,5 @@ RUN apt-get update && apt-get upgrade -y && \
 COPY tools/config_mariadb.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/config_mariadb.sh
 
-EXPOSE 3306
-
 ENTRYPOINT ["/usr/local/bin/config_mariadb.sh"]
 CMD ["mysqld"]
